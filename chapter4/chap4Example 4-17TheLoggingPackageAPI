@@ -1,0 +1,5 @@
+--Example 4-17. The logging package API
+create or replace PACKAGE loggingPackage
+AS
+PROCEDURE LOG_ACTION(
+action_message IN VAR
