@@ -1,0 +1,13 @@
+--Example 4-20. Data modification procedure with logging integrated
+create or replace PROCEDURE updateEmployeeData(
+ENAME IN VARCHAR2, EMPNO IN NUMBER, SAL IN NUMBER)
+AS
+BEGIN
+ loggingPackage.LOG_ACTION('Employee: ' || ENAME || ' Number: ' ||
+ EMPNO || ' Salary: ' || SAL, 'updateEmployeeData');
+ loggingPackage.LOG_ACTION('Success - we got here 1!',
+ 'updateEmployeeData');
+ INSERT INTO temp VALUES
+ (SAL, EMPNO, ENAME);
+ loggingPackage.LOG_ACTION('Successful insert', 'updateEmployeeData');
+END;
