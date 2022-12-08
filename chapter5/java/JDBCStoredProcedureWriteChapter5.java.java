@@ -11,7 +11,7 @@ public class JDBCStoredProcedureWriteChapter5 {
             String code_location = "In Java";
             try {
                 connection = DBConnection.getConnection();
-                statement = connection.prepareCall("{call LOGGINGPACKAGE.LOG_ACTION(?, ?)}");
+                statement = connection.prepareCall("{call PACKAGE1.LOG_ACTION(?, ?)}");
                 statement.setString("action_message", action_message);
                 statement.setString("code_location", code_location);
                 statement.executeUpdate();
