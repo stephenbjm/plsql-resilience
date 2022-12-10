@@ -5,8 +5,8 @@ import java.sql.SQLException;
 public class DBConnection {
 
     private static final String DB_DRIVER_CLASS = "oracle.jdbc.driver.OracleDriver";
-    private static final String DB_USERNAME = "HR";
-    private static final String DB_PASSWORD = "hrpass";
+    private static final String DB_USERNAME = "HR"; // Supply your own username as per your database installation
+    private static final String DB_PASSWORD = "hrpass";  // Supply your own password as per your database installation
 
     public static Connection getConnection() {
         Connection connectionn = null;
