@@ -67,7 +67,9 @@ BEGIN
  get_revenue(proj_rec.hours_worked, proj_rec.rate),
  proj_rec.tax ,
  proj_rec.recipient ,
- get_payment(get_revenue(proj_rec.hours_worked))
+ get_payment(get_revenue(proj_rec.hours_worked,
+ proj_rec.rate),
+ proj_rec.hours_worked, proj_rec.rate, proj_rec.tax) 
  );
  CLOSE proj_cur;
 END;
